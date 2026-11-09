@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ef">
+    <meta name="description" content="A bright, playful game of Connect Four. Challenge a friend or take on the computer.">
+    <title>Four in a Row — Connect Four</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="Four in a Row home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>four<span class="wordmark-light">in</span>arow</span>
+        </a>
+        <span class="project-label"><span class="label-dot"></span> A classic, reimagined</span>
+      </header>
+
+      <section class="game-layout" aria-label="Connect Four game">
+        <div class="intro">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE FRIENDLY FACE-OFF</p>
+          <h1>Four in a row.<br><span>One good time.</span></h1>
+          <p class="intro-copy">A little strategy, a little luck. Drop your discs, block your rival, and make that winning line.</p>
+
+          <section class="score-card" aria-label="Match score">
+            <div class="score-player">
+              <span class="player-dot player-dot-red"></span>
+              <div><span class="score-name" id="red-name">You</span><strong id="red-score">0</strong></div>
+            </div>
+            <span class="score-divider" aria-hidden="true"></span>
+            <div class="score-player">
+              <span class="player-dot player-dot-yellow"></span>
+              <div><span class="score-name" id="yellow-name">Computer</span><strong id="yellow-score">0</strong></div>
+            </div>
+            <button class="reset-score" id="reset-score" type="button" aria-label="Reset match scores" title="Reset scores">↻</button>
+          </section>
+
+          <div class="mode-block">
+            <p class="section-label">CHOOSE YOUR OPPONENT</p>
+            <div class="mode-picker" role="group" aria-label="Game mode">
+              <button class="mode-button is-active" id="mode-computer" type="button" aria-pressed="true">
+                <span aria-hidden="true">✦</span> Play computer
+              </button>
+              <button class="mode-button" id="mode-friend" type="button" aria-pressed="false">
+                <span aria-hidden="true">♟</span> Play a friend
+              </button>
+            </div>
+          </div>
+
+          <div class="turn-card" aria-live="polite">
+            <span class="turn-indicator player-dot-red" id="turn-indicator"></span>
+            <div>
+              <span class="turn-overline" id="turn-overline">YOUR MOVE</span>
+              <strong id="game-status">Your turn</strong>
+            </div>
+            <span class="turn-sparkle" aria-hidden="true">✳</span>
+          </div>
+
+          <button class="new-game-button" id="new-game" type="button">
+            <span aria-hidden="true">↻</span> New game
+          </button>
+          <p class="keyboard-hint">TIP <span>Use ← → and Enter to play</span></p>
+        </div>
+
+        <div class="board-stage">
+          <div class="board-topline">
+            <span><span class="live-dot"></span> <span id="round-label">ROUND 01</span></span>
+            <span class="board-note" id="board-note">RED STARTS</span>
+          </div>
+          <div class="board-frame">
+            <div class="board-glow" aria-hidden="true"></div>
+            <div class="board" id="board" aria-label="Connect Four board, 7 columns and 6 rows"></div>
+          </div>
+          <div class="board-footer">
+            <span><span class="player-dot player-dot-red"></span> RED</span>
+            <span class="move-count" id="move-count">0 MOVES</span>
+            <span><span class="player-dot player-dot-yellow"></span> YELLOW</span>
+          </div>
+          <p class="board-caption">Four connected discs wins. <span>It's that simple.</span></p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>MADE FOR THE LOVE OF A GOOD GAME</span>
+        <span><a class="footer-video" href="video-studio.html">MAKE A DEMO VIDEO</a> <span class="footer-star">✳</span> INTERNPE</span>
+      </footer>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
